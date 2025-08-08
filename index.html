@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* change color of checkboxes on hover */
+    input[type="checkbox"]:hover {
+      accent-color: brightness(1.5);
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    /* <g> in svg to prevent marking text when dragging */
+    .prevent-select {
+      -webkit-user-select: none;
+      /* Safari */
+      -ms-user-select: none;
+      /* IE 10 and IE 11 */
+      user-select: none;
+      /* Standard syntax */
+    }
+
+    /* spacing between list items when listing concepts */
+    li:not(:last-child) {
+      padding-bottom: 15px;
+    }
+
+    /* body {
+      padding-left: 200px;
+      padding-right: 200px;
+    } */
+  </style>
+<link rel="modulepreload" href="/odis-web-ef9744fa03030fbe.js" crossorigin="anonymous" integrity="sha384-NXO+GNcE5ueuAHNb0zLgPZw+jrs65TIZOz0zejydTijKdkSpd2Tnq4fi9PR4n+mK"><link rel="preload" href="/odis-web-ef9744fa03030fbe_bg.wasm" crossorigin="anonymous" integrity="sha384-H8Ir7oXoRphT3IiAVsncQJM8wlJau64gBvZwO2TdK0wyaedO86swjW9eD4TxXr3y" as="fetch" type="application/wasm"></head>
+
+<body>
+<script type="module">
+import init, * as bindings from '/odis-web-ef9744fa03030fbe.js';
+const wasm = await init({ module_or_path: '/odis-web-ef9744fa03030fbe_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+
+</html>
